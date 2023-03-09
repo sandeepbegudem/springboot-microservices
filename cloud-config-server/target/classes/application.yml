@@ -1,0 +1,13 @@
+server:
+  port: 5009
+spring:
+  application:
+    name: CLOUD-CONFIG-SERVER
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/IntelliKoder/cloud-config-server
+          clone-ons-tart: true
+ 
