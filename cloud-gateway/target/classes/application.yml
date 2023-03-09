@@ -1,0 +1,30 @@
+  
+spring:
+  application:
+    
+  cloud:
+    gateway:
+    discovery:
+         locator:
+            enabled: true
+            
+ 
+cloud:
+   config:
+    enabled: true
+    uri: http://localhost:5009
+      
+  
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+    
+management:
+   endpoint:
+      gateway:
+         enabled: true
+   endpoints:
+      web:
+         exposure:
+            include: gateway
