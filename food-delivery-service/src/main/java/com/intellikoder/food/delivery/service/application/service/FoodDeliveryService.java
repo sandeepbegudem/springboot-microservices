@@ -14,11 +14,15 @@ import java.util.Optional;
 
 @Service
 public class FoodDeliveryService {
-    @Autowired
-    private FoodDeliveryRepository foodDeliveryRepository;
+    
+    private final FoodDeliveryRepository foodDeliveryRepository;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
+
+    public FoodDeliveryService(FoodDeliveryRepository foodDeliveryRepository, RestTemplate restTemplate) {
+        this.foodDeliveryRepository = foodDeliveryRepository;
+        this.restTemplate = restTemplate;
+    }
 
     private static final String BASEURL = "http://RESTAURANT-SERVICE/restaurants/";
 
