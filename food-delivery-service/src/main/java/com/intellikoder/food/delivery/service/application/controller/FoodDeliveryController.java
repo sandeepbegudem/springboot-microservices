@@ -22,6 +22,7 @@ public class FoodDeliveryController {
     public FoodDeliveryController(FoodDeliveryService foodDeliveryService, RestTemplate restTemplate) {
         this.foodDeliveryService = foodDeliveryService;
         this.restTemplate = restTemplate;
+    }
 
     @PostMapping("/create-order")
     public ResponseEntity<FoodDelivery> saveDeliveryDetails(@RequestBody FoodDelivery foodDelivery){
