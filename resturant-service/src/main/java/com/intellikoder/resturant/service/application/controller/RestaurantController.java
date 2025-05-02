@@ -15,8 +15,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/restaurants")
 public class RestaurantController {
-    @Autowired
+    
     private RestaurantService restaurantService;
+    
+    @Autowired
+    public RestaurantController(RestaurantService restaurantService) {
+        this.restaurantService = restaurantService;
+    }
 
     @GetMapping("/")
     public List<Restaurant> getAllRestaurants(){
