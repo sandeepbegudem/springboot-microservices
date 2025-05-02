@@ -16,11 +16,12 @@ import java.util.Optional;
 @RequestMapping("/delivery")
 public class FoodDeliveryController {
 
-    @Autowired
-    private FoodDeliveryService foodDeliveryService;
+    private final FoodDeliveryService foodDeliveryService;
+    private final RestTemplate restTemplate;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    public FoodDeliveryController(FoodDeliveryService foodDeliveryService, RestTemplate restTemplate) {
+        this.foodDeliveryService = foodDeliveryService;
+        this.restTemplate = restTemplate;
 
     @PostMapping("/create-order")
     public ResponseEntity<FoodDelivery> saveDeliveryDetails(@RequestBody FoodDelivery foodDelivery){
